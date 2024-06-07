@@ -69,6 +69,7 @@ RUN set -x ; \
 RUN sed -i 's|backend_httpd|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr/copr.conf
 RUN sed -i 's|localhost|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr/copr.conf
 RUN sed -i 's|frontend|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr/copr.conf
+RUN sed -i 's|distgit-httpd|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr/copr.conf
 
 # system setup for copr-backend
 RUN usermod -a -G mock copr
