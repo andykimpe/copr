@@ -30,7 +30,7 @@ RUN set -ex ; \
     && cat /etc/mock/epel-next-9-x86_64-rpmfusion_nonfree.cfg > /etc/mock/epel-next-8-x86_64-rpmfusion_nonfree.cfg \
     && sed -i 's|epel-next-9-x86_64.cfg|epel-next-8-x86_64.cfg|' /etc/mock/epel-next-8-x86_64-rpmfusion_free.cfg \
     && sed -i 's|epel-next+rpmfusion_free-9-x86_64.cfg|epel-next+rpmfusion_free-8-x86_64.cfg|' /etc/mock/epel-next-8-x86_64-rpmfusion_nonfree.cfg \
-    dnf -y install copr-dist-git && \
+    dnf -y install copr-dist-git bind-utils && \
     dnf clean all
 
 RUN rm /etc/httpd/conf.d/ssl.conf
@@ -58,6 +58,8 @@ RUN echo 'scan-path=/var/lib/dist-git/git/rpms' | tee -a /etc/cgitrc
 RUN directories="/etc/httpd /var/run/httpd /var/log/httpd /var/lib/dist-git /run/lock" ; \
     chown -R copr-dist-git:root $directories && \
     chmod -R g+rwX $directories
+
+RUN sed -i 's|frontend|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr/copr-dist-git.conf
 
 USER copr-dist-git
 
