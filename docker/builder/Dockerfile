@@ -53,7 +53,7 @@ RUN echo 'root:passwd' | chpasswd && \
     touch /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys && \
     cat /root/.ssh/id_backend.pub >> /root/.ssh/authorized_keys
 
-RUN sed -i 's|distgit-httpd:5001|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)':5001|' /etc/copr-distgit-client/docker.ini
+RUN sed -i 's|http://distgit-httpd:5001|http://'$(dig @resolver4.opendns.com myip.opendns.com +short -4)':5001|' /etc/copr-distgit-client/docker.ini
 RUN sed -i 's|frontend|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr-rpmbuild/main.ini
 RUN sed -i 's|http://distgit-httpd/|http://'$(dig @resolver4.opendns.com myip.opendns.com +short -4)':5001|' /etc/copr-rpmbuild/main.ini
 
