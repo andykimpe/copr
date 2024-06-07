@@ -32,7 +32,7 @@ RUN set -ex ; \
                    modulemd-tools \
                    python3-authlib \
     && dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-39.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-39.noarch.rpm -y \
-    && dnf install mock-rpmfusion-nonfree -y \
+    && dnf install mock-rpmfusion-nonfree bind-utils -y \
     && sed -i 's|epel-9-x86_64.cfg|alma+epel-9-x86_64.cfg|' /etc/mock/epel+rpmfusion_free-9-x86_64.cfg \
     && sed -i 's|epel-8-x86_64.cfg|alma+epel-8-x86_64.cfg|' /etc/mock/epel+rpmfusion_free-8-x86_64.cfg \
     && cat /etc/mock/epel-next-9-x86_64-rpmfusion_free.cfg > /etc/mock/epel-next-8-x86_64-rpmfusion_free.cfg \
@@ -75,6 +75,13 @@ RUN chmod -R g+rwX \
     /etc/httpd/ \
     /var/run/httpd/ \
     /var/log/httpd/
+
+RUN sed -i 's|localhost|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr/copr.conf
+RUN sed -i 's|frontend|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr/copr.conf
+RUN sed -i 's|backend_httpd|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr/copr.conf
+RUN sed -i 's|distgit-httpd|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr/copr.conf
+RUN sed -i 's|BUILDER_IPS = ["127.0.0.1"]|BUILDER_IPS = ["'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'"]|' /etc/copr/copr.conf
+RUN sed -i 's|distgit-httpd|'$(dig @resolver4.opendns.com myip.opendns.com +short -4)'|' /etc/copr/copr.conf
 
 # Use copr-fe user when running outside of OpenShift
 USER copr-fe
