@@ -29,8 +29,8 @@ RUN set -ex ; \
     && cat /etc/mock/epel-next-9-x86_64-rpmfusion_nonfree.cfg > /etc/mock/epel-next-8-x86_64-rpmfusion_nonfree.cfg \
     && sed -i 's|epel-next-9-x86_64.cfg|epel-next-8-x86_64.cfg|' /etc/mock/epel-next-8-x86_64-rpmfusion_free.cfg \
     && sed -i 's|epel-next+rpmfusion_free-9-x86_64.cfg|epel-next+rpmfusion_free-8-x86_64.cfg|' /etc/mock/epel-next-8-x86_64-rpmfusion_nonfree.cfg \
-    dnf -y install copr-dist-git bind-utils && \
-    dnf clean all
+    && dnf -y install copr-dist-git bind-utils \
+    && dnf clean all
 
 RUN rm /etc/httpd/conf.d/ssl.conf
 
