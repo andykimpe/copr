@@ -46,8 +46,8 @@
 }
 
 Name:       copr-frontend
-Version:    1.206
-Release:    2%{?dist}
+Version:    1.207
+Release:    1%{?dist}
 Summary:    Frontend for Copr
 
 License:    GPL-2.0-or-later
