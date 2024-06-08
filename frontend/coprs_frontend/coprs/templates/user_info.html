@@ -16,42 +16,42 @@
 {% endblock %}
 
 {% block content %}
-<h1>User Info</h1>
+<h1>Info Utilisateur</h1>
 
 <p>
-    According to the GDPR (General Data Protection Regulation 2016/679 of the European Union), users have right to see
-    all the data, that service stores about them, and also right to delete them. Read more about your
-    <a href="https://fedoraproject.org/wiki/Legal:PrivacyPolicy#Your_Rights_and_Choices_in_the_EEA">rights and privacy in the Fedora Project</a>.
+    Conformément au RGPD (Règlement Général sur la Protection des données 2016/679 de l’Union européenne), les utilisateurs ont le droit de voir
+    toutes les données, que le service stocke à leur sujet, et aussi le droit de les supprimer. En savoir plus sur votre
+    <a href="https://fedoraproject.org/wiki/Legal:PrivacyPolicy#Your_Rights_and_Choices_in_the_EEA">Droits et vie privée dans le projet Fedora</a>.
 </p>
 
 
-<h2>Obtaining data</h2>
+<h2>Obtenir les Données</h2>
 <p>
-    It is possible to download a JSON file with a dump of all the information that Copr knows about you (e.g. list of
-    your projects, your builds, contact information, API tokens, etc).
+    Il est possible de télécharger un fichier JSON avec un dump de toutes les informations que Copr connaît sur vous (par ex. liste de
+    vos projets, vos builds, vos coordonnées, vos tokens API, etc).
 </p>
 <p>
     <a href="{{ url_for('user_ns.user_info_download') }}">
-        <button type="button" class="btn btn-primary">Download my data</button>
+        <button type="button" class="btn btn-primary">Télécharger mes Données</button>
     </a>
 </p>
 <p>
-    If you have any difficulties with generating a JSON file, please
-    <a href="https://docs.pagure.org/copr.copr/index.html#communication">contact us</a>,
-    and it will be sent to your FAS email.
+    Si vous avez des difficultés à générer un fichier JSON, SVP
+    <a href="https://docs.pagure.org/copr.copr/index.html#communication">Contactez nous</a>,
+    et nous l'envérons sur l'émail de compte Fedora.
 </p>
 
 
-<h2>Delete data</h2>
+<h2>Supprimer mes Données</h2>
 <p>
-    This will delete the information Copr knows about you, such as timezone and API tokens. However, your username and
-    email cannot be deleted as they are tied to the FAS account. Moreover, if you wish to delete your builds/projects,
-    you have to do so manually (possibly using the data acquired above).
+    Cela supprimera les informations que Copr connaît sur vous, telles que le fuseau horaire et les jetons API. Cependant, votre nom d’utilisateur et
+    Les e-mails ne peuvent pas être supprimés car ils sont liés à votre compte Fedora. De plus, si vous souhaitez supprimer vos builds/projets,
+    vous devez le faire manuellement (éventuellement en utilisant les données acquises ci-dessus).
 </p>
 <p>
-    You can still log in at any later time. However, you will have to create a new API token.
+    Vous pouvez toujours vous connecter ultérieurement. Cependant, vous devrez créer un nouveau jeton API.
 </p>
-<a href="{{ url_for('user_ns.delete_data') }}" onclick="return confirm('Are you sure you want to delete your data?');">
+<a href="{{ url_for('user_ns.delete_data') }}" onclick="return confirm('Voulez-vous vraiment supprimer vos données ?');">
     <button type="button" class="btn btn-danger" action="">Delete my data</button>
 </a>
 {% endblock %}
