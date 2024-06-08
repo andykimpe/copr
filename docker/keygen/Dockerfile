@@ -27,7 +27,6 @@ RUN set -ex ; \
                    postgresql-server \
                    redis \
                    tini \
-                   && \
     && dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-39.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-39.noarch.rpm -y \
     && dnf install mock-rpmfusion-nonfree -y \
     && sed -i 's|epel-9-x86_64.cfg|alma+epel-9-x86_64.cfg|' /etc/mock/epel+rpmfusion_free-9-x86_64.cfg \
