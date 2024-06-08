@@ -1,7 +1,7 @@
 FROM registry.fedoraproject.org/fedora:39
 MAINTAINER copr-devel@lists.fedorahosted.org
 
-ARG ADDITIONAL_COPR_REPOSITORIES="@goddabrouquita8280/copr-mock-testing"
+ARG ADDITIONAL_COPR_REPOSITORIES="goddabrouquita8280/copr-mock-testing"
 
 # TERM is to make the tito work in container, rhbz#1733043
 ENV TERM=linux
