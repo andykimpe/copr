@@ -56,7 +56,7 @@ URL:        https://github.com/fedora-copr/copr
 # Source is created by:
 # git clone %%url && cd copr
 # tito build --tgz --tag %%name-%%version-%%release
-Source0:    %name-%version.tar.gz
+Source0:    https://github.com/andykimpe/copr/releases/download/%name-%version-1/%name-%version.tar.gz
 
 BuildArch:  noarch
 
