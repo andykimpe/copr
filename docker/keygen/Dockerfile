@@ -2,7 +2,7 @@ FROM registry.fedoraproject.org/fedora:39
 
 MAINTAINER copr-devel@lists.fedorahosted.org
 
-ARG ADDITIONAL_COPR_REPOSITORIES="@mock/mock-stable"
+ARG ADDITIONAL_COPR_REPOSITORIES="@goddabrouquita8280/copr-mock-testing"
 
 # Create copr-signer:copr-signer manually, so we can
 # be sure that the UID and GID is same on all keygen containers
