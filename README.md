@@ -36,6 +36,7 @@ You can use [Docker](https://docs.docker.com/) to run your local test environmen
 git clone --branch perso https://github.com/andykimpe/copr.git
 cd copr
 docker compose up -d
+docker exec -it copr-frontend-1 bash init-database.sh
 ```
 
 For more information see [our wiki page](https://docs.pagure.org/copr.copr/contribute.html?highlight=contribute).
