@@ -56,7 +56,7 @@ URL:        https://github.com/andykimpe/copr
 # Source is created by:
 # git clone https://github.com/andykimpe/copr && cd copr
 # tito build --tgz --tag copr-frontend-1.208
-Source0:    https://github.com/andykimpe/copr/releases/download/%name-%version-1/%name-%version.tar.gz
+Source0:    https://github.com/andykimpe/copr/releases/download/copr-frontend-1.208/copr-frontend-1.208.tar.gz
 
 BuildArch:  noarch
 
