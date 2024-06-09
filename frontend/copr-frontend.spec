@@ -51,10 +51,10 @@ Release:    1%{?dist}
 Summary:    Frontend for Copr
 
 License:    GPL-2.0-or-later
-URL:        https://github.com/fedora-copr/copr
+URL:        https://github.com/andykimpe/copr
 
 # Source is created by:
-# git clone %%url && cd copr
+# git clone https://github.com/andykimpe/copr && cd copr
 # tito build --tgz --tag copr-frontend-1.207
 Source0:    https://github.com/andykimpe/copr/releases/download/%name-%version-1/%name-%version.tar.gz
 
