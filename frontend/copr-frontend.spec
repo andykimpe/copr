@@ -46,7 +46,7 @@
 }
 
 Name:       copr-frontend
-Version:    1.207
+Version:    1.208
 Release:    1%{?dist}
 Summary:    Frontend for Copr
 
@@ -55,7 +55,7 @@ URL:        https://github.com/andykimpe/copr
 
 # Source is created by:
 # git clone https://github.com/andykimpe/copr && cd copr
-# tito build --tgz --tag copr-frontend-1.207
+# tito build --tgz --tag copr-frontend-1.208
 Source0:    https://github.com/andykimpe/copr/releases/download/%name-%version-1/%name-%version.tar.gz
 
 BuildArch:  noarch
