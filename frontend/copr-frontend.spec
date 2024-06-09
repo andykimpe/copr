@@ -55,7 +55,7 @@ URL:        https://github.com/fedora-copr/copr
 
 # Source is created by:
 # git clone %%url && cd copr
-# tito build --tgz --tag %%name-%%version-%%release
+# tito build --tgz --tag copr-frontend-1.207
 Source0:    https://github.com/andykimpe/copr/releases/download/%name-%version-1/%name-%version.tar.gz
 
 BuildArch:  noarch
